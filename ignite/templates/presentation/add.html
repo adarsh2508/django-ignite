@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title_block %}Submit Presentation{% endblock %}
+
+{% block content %}
+<h1>Presentation Submission</h1>
+<p>
+Enter the details of the 5-minute presentation you'd like to give below.
+</p>
+<form method="post" action="">
+<table>
+{{ form.as_table }}
+</table>
+<input type="submit">
+</form>
+{% endblock %}

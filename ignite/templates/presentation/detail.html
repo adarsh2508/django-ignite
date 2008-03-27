@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title_block %}Presentation Detail{% endblock %}
+
+{% block content %}
+
+<h1>{{ presentation.title}}</h1>
+<p>{{ presentation.description }}</p>
+<p>Presented by: 
+	{% if presentation.presenter_url %}
+		<a href="{{ presentation.presenter_url }}">{{ presentation.presenter_name }}</a>
+	{% else %}
+		{{ presentation.presenter_name }}
+	{% endif %}
+	&lt;{{ presentation.presenter_email }}&gt;</p>
+</p>
+<p>{{ presentation.presenter_bio }}</p>
+{% endblock %}
