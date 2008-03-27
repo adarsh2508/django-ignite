@@ -87,6 +87,7 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'django.contrib.sessions',
     'django.contrib.sites',
+    'ignite.presentation',
 )
 
 # For local development setting overrides
