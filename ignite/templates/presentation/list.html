@@ -6,7 +6,7 @@
 <ul>
 {% for p in presentation_list %}
 	<li class="{% cycle odd,even %}">
-    <h3><a href="{% url presentation_detail p.id %}">{{ p.title}}</a></h3>
+	<h3><a href="{% url presentation_detail p.slug %}">{{ p.title }}</a></h3>
 		<p>Presented by {{ p.presenter_name }}</p>
 	</li>
 {% endfor %}

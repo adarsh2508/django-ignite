@@ -1,44 +1,31 @@
 from django.core.urlresolvers import reverse
-from django.forms import ModelForm
 from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.views.generic.list_detail import object_list
 
+from ignite.presentation.forms import PresentationForm
 from ignite.presentation.models import Presentation
 
-#
-# FORMS
-#
-
-class PresentationForm(ModelForm):
-    class Meta:
-        model = Presentation
-        exclude = ('created',)
-
-#
-# VIEWS
-# 
-
-def presentation_detail(request, presentation_id):
+def presentation_detail(request, slug):
     try:
-        presentation = Presentation.objects.get(pk=presentation_id)
+        presentation = Presentation.objects.get(slug=slug)
     except Presentation.DoesNotExist:
         raise Http404, "Sorry, the presentation you requested was not found."
- 
+
     return render_to_response(
         'presentation/detail.html',
         {'presentation': presentation},
         context_instance=RequestContext(request)
     )
- 
+
 def presentation_list(request):
 
     presentations = Presentation.objects.all()
 
     if not presentations:
         raise Http404, "No presentations yet, sorry."
-    
+
     return object_list(
         request,
         queryset=presentations,

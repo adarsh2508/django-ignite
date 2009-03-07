@@ -4,5 +4,5 @@ from ignite.presentation.views import presentation_add, presentation_list, prese
 urlpatterns = patterns('',
     url(r'^$', presentation_list, name='presentation_list'),
     url(r'^add/$', presentation_add, name='presentation_add'),
-    url(r'^(?P<presentation_id>\d+)/$', presentation_detail, name='presentation_detail'),
+    url(r'^(?P<slug>[\w-]+)/$', presentation_detail, name='presentation_detail'),
 )
