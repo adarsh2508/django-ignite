@@ -40,7 +40,7 @@ def presentation_add(request):
         form = PresentationForm(data=request.POST, instance=presentation)
         if form.is_valid():
             new_presentation = form.save()
-            return HttpResponseRedirect(reverse(presentation_detail, args=(new_presentation.id,)))
+            return HttpResponseRedirect(reverse(presentation_detail, args=(new_presentation.slug,)))
         else:
             pass # Some error
     else:
