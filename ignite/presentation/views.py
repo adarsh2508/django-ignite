@@ -1,9 +1,10 @@
 from django.core.urlresolvers import reverse
+from django.forms import ModelForm
 from django.http import Http404, HttpResponseRedirect
-from django.newforms import ModelForm
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.views.generic.list_detail import object_list
+
 from ignite.presentation.models import Presentation
 
 #
