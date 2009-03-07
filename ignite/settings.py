@@ -4,7 +4,7 @@ import os
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
-PROJECT_PATH = os.path.abspath(os.path.split(__file__)[0])
+PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
@@ -75,7 +75,6 @@ TEMPLATE_DIRS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.auth',
-    'django.core.context_processors.debug',
     'django.core.context_processors.media',
     'django.core.context_processors.i18n',
 )
